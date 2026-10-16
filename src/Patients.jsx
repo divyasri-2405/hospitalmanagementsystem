@@ -1,5 +1,6 @@
 /*DAY-18*/
 import React,{useState,useEffect} from 'react'
+import {Link} from 'react-router-dom'
 import axios from 'axios'
 function Patients(){
     const[data,setData]=useState([])
@@ -48,9 +49,10 @@ function Patients(){
                             <h2>Patient Name:{v.name}</h2>
                             <h3>Disease:{v.disease}</h3>
                             <h4>Weight:{v.weight}</h4>
-                            <h5>Gender:{v.gender}</h5>
-                            <h5>Age:{v.age}</h5>
-                            <h5>Email:{v.email}</h5>
+                            <h4>Gender:{v.gender}</h4>
+                            <h4>Age:{v.age}</h4>
+                            <h4>Email:{v.email}</h4>
+                            <Link to={`/patients/${v.id}`}>View Patient</Link>
             </div>
                     ))
 
